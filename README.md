@@ -2,6 +2,15 @@
 
 This library provides facilities for generating random names/nicknames.
 
+## Current supported languages
+
+- `Namegen::Language::EN_US`
+- `Namegen::Language::DE`
+
+If you want to add new languages, take a look at `src/data` folder and add new
+language in the same format. Additionally add new constant in
+`Namegen::Language`. Then create a PR.
+
 ## Installation
 
 Add this line to your application's `Projectfile`:

@@ -6,6 +6,7 @@ module Namegen
 
   module Language
     DE = "de"
+    EN_US = "en_us"
   end
 
   module Gender
