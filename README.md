@@ -21,8 +21,27 @@ require "namegen"
 ### Generating a name
 
 ```crystal
-Namegen.name(Namegen::Language::DE, Namegen::Gender::FEMALE)
+g = Namegen.generator(Namegen::Language::DE, Namegen::Gender::FEMALE)
+g.name
 # => Zemda
+```
+
+### Example: Checking how unique names it is generating:
+
+```crystal
+require "namegen"
+
+n = 1000000
+g = Namegen.generator(Namegen::Language::DE, Namegen::Gender::FEMALE)
+names = {} of String => Int32
+(0..n).each do |i|
+  name = g.name()
+  names[name] ||= 0
+  names[name] += 1
+  puts "#{i} - #{name}"
+end
+
+puts "unique names: #{names.size} out of #{n}"
 ```
 
 ## Contributing
